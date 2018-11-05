@@ -182,6 +182,7 @@ behave-peer-chaincode: build/bin/peer peer-docker orderer-docker
 
 linter: buildenv
 	@echo "LINT: Running code checks.."
+	@echo "$(DOCKER_TAG)"
 	@$(DRUN) $(DOCKER_NS)/fabric-buildenv:$(DOCKER_TAG) ./scripts/golinter.sh
 
 %/chaintool: Makefile
